@@ -1,7 +1,7 @@
 import numpy as np
 import timeit
 
-crabs = np.loadtxt('days/day_7/input.txt', delimiter=',', dtype=int)
+crabs = np.loadtxt('days/day_07/input.txt', delimiter=',', dtype=int)
 
     
 start = timeit.default_timer()

@@ -2,7 +2,7 @@ import numpy as np
 from collections import deque
 import timeit
 
-fish = np.loadtxt('days/day_6/input.txt', delimiter=',', dtype=int)
+fish = np.loadtxt('days/day_06/input.txt', delimiter=',', dtype=int)
 
 def fesh(days):
     fish_counts = deque(np.zeros(9, dtype=int))

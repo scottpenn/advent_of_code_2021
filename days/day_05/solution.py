@@ -1,6 +1,6 @@
 import numpy as np
 
-lines = np.loadtxt('days/day_5/input.txt', delimiter=' -> ', dtype=str)
+lines = np.loadtxt('days/day_05/input.txt', delimiter=' -> ', dtype=str)
 
 lines = np.char.split(lines, ',')
 

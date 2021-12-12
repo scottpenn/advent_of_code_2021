@@ -1,9 +1,9 @@
 import numpy as np
 import numpy.ma as ma
 
-numbers = np.loadtxt('days/day_4/input.txt', max_rows=1, dtype=int, delimiter=',')
+numbers = np.loadtxt('days/day_04/input.txt', max_rows=1, dtype=int, delimiter=',')
 
-boards = np.loadtxt('days/day_4/input.txt', skiprows=1, dtype=int)
+boards = np.loadtxt('days/day_04/input.txt', skiprows=1, dtype=int)
 boards = np.reshape(boards, (-1, 5, 5))
 
 def check_bingo(marks):

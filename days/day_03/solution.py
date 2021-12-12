@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-report = pd.Series(np.loadtxt('days/day_3/input.txt', dtype=str))
+report = pd.Series(np.loadtxt('days/day_03/input.txt', dtype=str))
 
 sums = [report.str[i].astype(int).sum() for i in range(12)]
 

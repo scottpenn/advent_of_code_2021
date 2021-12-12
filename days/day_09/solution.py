@@ -4,7 +4,7 @@ import timeit
     
 start = timeit.default_timer()
 
-heights = np.loadtxt('days/day_9/input.txt', dtype=str)
+heights = np.loadtxt('days/day_09/input.txt', dtype=str)
 heights = np.asarray([np.asarray([int(c) for c in s]) for s in heights])
 
 heightmap = np.full((102, 102), 10)

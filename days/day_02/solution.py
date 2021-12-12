@@ -1,6 +1,6 @@
 import numpy as np
 
-movements = np.loadtxt('days/day_2/input.txt', dtype=str)
+movements = np.loadtxt('days/day_02/input.txt', dtype=str)
 
 horizontal = 0
 depth = 0

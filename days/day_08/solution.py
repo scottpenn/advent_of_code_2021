@@ -3,7 +3,7 @@ import timeit
     
 start = timeit.default_timer()
 
-displays = np.loadtxt('days/day_8/input.txt', delimiter=' | ', dtype=str)
+displays = np.loadtxt('days/day_08/input.txt', delimiter=' | ', dtype=str)
 
 displays = np.char.split(displays)
 easy_digits = 0

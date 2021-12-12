@@ -1,6 +1,6 @@
 import numpy as np
 
-depths = np.loadtxt('days/day_1/input.txt')
+depths = np.loadtxt('days/day_01/input.txt')
 
 increased = 0
 
