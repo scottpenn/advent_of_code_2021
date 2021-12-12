@@ -2,7 +2,7 @@ import numpy as np
 
 import timeit
     
-start = timeit.default_timer()
+
 
 navigation = np.loadtxt('days/day_10/input.txt', dtype=str)
 

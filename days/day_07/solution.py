@@ -4,7 +4,7 @@ import timeit
 crabs = np.loadtxt('days/day_07/input.txt', delimiter=',', dtype=int)
 
     
-start = timeit.default_timer()
+
 
 min_fuel = np.sum(np.abs(crabs - 1))
 
@@ -23,6 +23,4 @@ for i in range(2, np.max(crabs)):
 
 print(min_fuel)
 
-stop = timeit.default_timer()
-
-print('Time: ', stop - start)  
+  

@@ -1,7 +1,7 @@
 import numpy as np
 import timeit
     
-start = timeit.default_timer()
+
 
 displays = np.loadtxt('days/day_08/input.txt', delimiter=' | ', dtype=str)
 
@@ -56,6 +56,4 @@ for signals, digits in displays:
 
 print(outputs)
 
-stop = timeit.default_timer()
-
-print('Time: ', stop - start)  
+  

@@ -16,16 +16,14 @@ def fesh(days):
 
     return sum(fish_counts)
     
-start = timeit.default_timer()
+
 
 print(fesh(80))
 print(fesh(256))
 
-stop = timeit.default_timer()
+  
 
-print('Time: ', stop - start)  
-
-# start = timeit.default_timer()
+# 
 
 # fish_counts = Counter(fish)
 

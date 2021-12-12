@@ -5,8 +5,6 @@ octopodes = np.loadtxt('days/day_11/input.txt', dtype=str)
 octopodes = np.asarray([np.asarray([int(c) for c in s]) for s in octopodes])
 octopodes = np.pad(octopodes, 1)
 
-start = timeit.default_timer()
-
 flashes = 0
 for i in range(1000):
     # Part 1 answer
@@ -40,7 +38,3 @@ for i in range(1000):
             octopodes[x-1, y+1] += 1 if octopodes[x-1, y+1] > 0 else 0
             octopodes[x, y+1] += 1 if octopodes[x, y+1] > 0 else 0
             octopodes[x+1, y+1] += 1 if octopodes[x+1, y+1] > 0 else 0
-
-stop = timeit.default_timer()
-
-print('Time: ', stop - start)  

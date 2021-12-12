@@ -2,7 +2,7 @@ import numpy as np
 
 import timeit
     
-start = timeit.default_timer()
+
 
 heights = np.loadtxt('days/day_09/input.txt', dtype=str)
 heights = np.asarray([np.asarray([int(c) for c in s]) for s in heights])
@@ -39,6 +39,4 @@ for i in range(1, len(heightmap) - 1):
 
 print(np.prod(sorted(basins.values())[-3:]))
 
-stop = timeit.default_timer()
-
-print('Time: ', stop - start)  
+  
