@@ -13,26 +13,35 @@ for cave in caves:
 # Part 1 recursive solution
 def find_paths_part_1(current_path):
     current_cave = current_path[-1]
-    if np.char.islower(current_cave) and current_cave in current_path[:-1]:
-            return 0
-    if current_path[-1] == 'end':
-        return 1
-    next_caves = connections[current_path[-1]]
-    return np.sum([find_paths_part_1(current_path + [cave]) for cave in next_caves])
+    total_paths = 0
+    next_caves = connections[current_cave]
+    for cave in next_caves:
+        if cave == 'end':
+            total_paths += 1
+        elif np.char.islower(cave) and cave in current_path:
+            continue
+        else:
+            total_paths += find_paths_part_1(current_path + [cave])
+    return total_paths
 
 # Part 2 recursive solution
 def find_paths_part_2(current_path, small_cave_visited):
     current_cave = current_path[-1]
-    if np.char.islower(current_cave) and current_cave in current_path[:-1]:
-        if current_cave == 'start' or small_cave_visited:
-            return 0
+    total_paths = 0
+    next_caves = connections[current_cave]
+    for cave in next_caves:
+        if cave == 'end':
+            total_paths += 1
+        elif cave == 'start':
+            continue
+        elif np.char.islower(cave) and cave in current_path:
+            if small_cave_visited:
+                continue
+            else:
+                total_paths += find_paths_part_2(current_path + [cave], True)
         else:
-            small_cave_visited = True
-    if current_path[-1] == 'end':
-        return 1
-    next_caves = connections[current_path[-1]]
-    return np.sum([find_paths_part_2(current_path + [cave], small_cave_visited) \
-                        for cave in next_caves])
+            total_paths += find_paths_part_2(current_path + [cave], small_cave_visited)
+    return total_paths
 
 paths_part_1 = find_paths_part_1(['start'])
 paths_part_2 = find_paths_part_2(['start'], False)
