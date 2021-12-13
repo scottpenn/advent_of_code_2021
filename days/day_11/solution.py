@@ -1,5 +1,4 @@
 import numpy as np
-import timeit
 
 octopodes = np.loadtxt('days/day_11/input.txt', dtype=str)
 octopodes = np.asarray([np.asarray([int(c) for c in s]) for s in octopodes])

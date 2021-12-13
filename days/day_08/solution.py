@@ -1,7 +1,4 @@
 import numpy as np
-import timeit
-    
-
 
 displays = np.loadtxt('days/day_08/input.txt', delimiter=' | ', dtype=str)
 

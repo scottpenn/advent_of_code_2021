@@ -18,6 +18,7 @@ def check_bingo(marks):
         np.all(marks[:, 2]),
         np.all(marks[:, 3]),
         np.all(marks[:, 4]),
+        # No need to check diagonals
         # np.all([marks[0, 0], marks[1, 1], marks[2, 2], marks[3, 3], marks[4, 4]]),
         # np.all([marks[4, 0], marks[3, 1], marks[2, 2], marks[1, 3], marks[0, 4]]),
     ])
@@ -34,8 +35,6 @@ def get_winning_board():
                 marks[n][i][j] = 1
                 if check_bingo(marks[n]):
                     numbers_left = ma.masked_array(board, mask=marks[n])
-                    print(numbers_left)
-                    print(number, np.sum(numbers_left))
                     print(np.sum(numbers_left) * number)
                     return
 
@@ -56,8 +55,6 @@ def get_losing_board():
                 if check_bingo(marks[n]):
                     if len(boards_left) == 1:
                         numbers_left = ma.masked_array(boards[n], mask=marks[n])
-                        print(numbers_left)
-                        print(number, np.sum(numbers_left))
                         print(np.sum(numbers_left) * number)
                         return
                     else:

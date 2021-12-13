@@ -1,6 +1,5 @@
 import numpy as np
 from collections import deque
-import timeit
 
 fish = np.loadtxt('days/day_06/input.txt', delimiter=',', dtype=int)
 
@@ -23,7 +22,7 @@ print(fesh(256))
 
   
 
-# 
+# Inefficient solution used for Part 1
 
 # fish_counts = Counter(fish)
 

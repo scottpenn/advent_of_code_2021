@@ -1,10 +1,6 @@
 import numpy as np
-import timeit
 
 crabs = np.loadtxt('days/day_07/input.txt', delimiter=',', dtype=int)
-
-    
-
 
 min_fuel = np.sum(np.abs(crabs - 1))
 

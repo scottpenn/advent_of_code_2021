@@ -13,7 +13,7 @@ gamma = int(gamma, 2)
 
 epsilon = int(epsilon, 2)
 
-print(gamma, epsilon, gamma * epsilon)
+print(gamma * epsilon)
 
 oxygen = report
 i = 0
@@ -45,4 +45,4 @@ oxygen = int(oxygen, 2)
 
 co2 = int(co2, 2)
 
-print(oxygen, co2, oxygen * co2)
+print(oxygen * co2)

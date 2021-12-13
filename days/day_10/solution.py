@@ -1,9 +1,5 @@
 import numpy as np
 
-import timeit
-    
-
-
 navigation = np.loadtxt('days/day_10/input.txt', dtype=str)
 
 chunks = {'(' : ')', '[': ']', '{': '}', '<': '>'}
@@ -32,9 +28,5 @@ for nav in navigation:
             completion_score += completion_dict[chunks[stack.pop()]]
         completion_scores.append(completion_score)
 
-# print(corruption_score)
-# print(int(np.median(completion_scores)))
-
-# stop = timeit.default_timer()
-
-# print('Time: ', stop - start)
+print(corruption_score)
+print(int(np.median(completion_scores)))

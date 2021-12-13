@@ -1,9 +1,5 @@
 import numpy as np
 
-import timeit
-    
-
-
 heights = np.loadtxt('days/day_09/input.txt', dtype=str)
 heights = np.asarray([np.asarray([int(c) for c in s]) for s in heights])
 
