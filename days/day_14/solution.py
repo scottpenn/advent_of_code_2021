@@ -1,11 +1,14 @@
-from collections import Counter
 import numpy as np
+from collections import Counter
 
+# Load template
 template = list(np.loadtxt('days/day_14/input.txt', dtype=str, max_rows=1).item())
 
+# Load rules for pair insertion
 rules = np.loadtxt('days/day_14/input.txt', delimiter=' -> ', dtype=str, skiprows=2)
 rules = {pair: new for pair, new in rules}
 
+# Keep track of the count of each letter and each pair of letters
 letters = Counter(template)
 pairs = Counter("".join(template[i:i+2]) for i in range(0, len(template) - 1))
 

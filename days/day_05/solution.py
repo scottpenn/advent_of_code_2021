@@ -1,15 +1,10 @@
 import numpy as np
 
-lines = np.loadtxt('days/day_05/input.txt', delimiter=' -> ', dtype=str)
-
-lines = np.char.split(lines, ',')
+lines = np.fromregex('days/day_05/input.txt', '(\d*),(\d*) -> (\d*),(\d*)\n*', dtype=int)
 
 grid = np.zeros((1000, 1000), dtype=int)
 
-for line in lines:
-    x1, y1 = int(line[0][0]), int(line[0][1])
-    x2, y2 = int(line[1][0]), int(line[1][1])
-
+for x1, y1, x2, y2 in lines:
     if x1 == x2:
         y1, y2 = sorted([y1, y2])
         for y in range(y1, y2 + 1):
@@ -23,10 +18,7 @@ print(np.count_nonzero(grid >= 2))
 
 grid = np.zeros((1000, 1000), dtype=int)
 
-for line in lines:
-    x1, y1 = int(line[0][0]), int(line[0][1])
-    x2, y2 = int(line[1][0]), int(line[1][1])
-
+for x1, y1, x2, y2 in lines:
     if x1 == x2:
         y1, y2 = sorted([y1, y2])
         for y in range(y1, y2 + 1):

@@ -1,7 +1,6 @@
 import numpy as np
 from collections import defaultdict
 
-
 caves = np.loadtxt('days/day_12/input.txt', delimiter='-', dtype=str)
 
 connections = defaultdict(list)
