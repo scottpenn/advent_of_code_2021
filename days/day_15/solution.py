@@ -19,7 +19,6 @@ def find_best_path(risk_levels):
     visited = set()
 
     while unvisited:
-        print(visited)
         risk, node = heapq.heappop(unvisited)
         if risk != best_paths[node]:
             continue
@@ -30,8 +29,9 @@ def find_best_path(risk_levels):
                 visited.add(adjacent_node)
             if adjacent_node not in visited:
                 risk = best_paths[node] + risk_levels[adjacent_node]
-                best_paths[adjacent_node] = min(risk, best_paths[adjacent_node])
-                heapq.heappush(unvisited, (risk, adjacent_node))
+                if risk < best_paths[adjacent_node]:
+                    best_paths[adjacent_node] = risk
+                    heapq.heappush(unvisited, (risk, adjacent_node))
         visited.add(node)
 
     return best_paths[(max_x, max_y)]
