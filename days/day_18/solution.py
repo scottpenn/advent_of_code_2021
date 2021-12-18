@@ -2,7 +2,6 @@ import numpy as np
 from collections import defaultdict, Counter
 import sys
 
-
 numbers = np.loadtxt('days/day_18/input.txt', delimiter='\n', dtype='str')
 # print(numbers)
 
@@ -26,14 +25,12 @@ def add_numbers(n1, n2):
     return number
 
 def reduce_number(n):
-    if np.any(depth >= 5 for depth, _ in n):
-        n = explode_number(n)
+    n = explode_number(n)
     while True:
         n, did_split = split_number(n)
         if not did_split:
             break
-        if np.any(depth >= 5 for depth, _ in n):
-            n = reduce_number(n)
+        n = reduce_number(n)
     return n
 
 def explode_number(n):
@@ -92,9 +89,9 @@ print(magnitude(number))
 
 magnitudes = {}
 for x in range(len(numbers)):
+    n1 = read_number(numbers[x])
     for y in range(len(numbers)):
-        if x != y and (x, y) not in magnitudes:
-            n1 = read_number(numbers[x])
+        if (x, y) not in magnitudes:
             n2 = read_number(numbers[y])
             number = add_numbers(n1, n2)
             number = reduce_number(number)
